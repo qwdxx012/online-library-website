@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОнлайнБиблиотека - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book"></i>
+                    <span>ОнлайнБиблиотека</span>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Коллекции</a></li>
+                        <li><a href="#">О нас</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Сменить тему">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <a href="cart.html" class="cart-btn" title="Корзина">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    
+                    <div class="auth-buttons">
+                        <button class="btn btn-outline" id="loginBtn">Войти</button>
+                        <button class="btn btn-primary" id="registerBtn">Регистрация</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Авторизация</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="login">Вход</button>
+                    <button class="tab-btn" data-tab="register">Регистрация</button>
+                </div>
+                
+                <form id="loginForm" class="auth-form active">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Пароль" id="loginPassword" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" id="submitLogin">Войти</button>
+                </form>
+                
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Имя" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Пароль" id="registerPassword" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" id="submitRegister">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Великая литература ждет вас</h1>
+            <p>Откройте для себя мир захватывающих приключений и мудрых мыслей в нашей онлайн-библиотеке</p>
+            <a href="catalog.html" class="btn btn-primary btn-large">Начать чтение</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="books-section">
+            <h2>Популярные книги</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="images/master-margarita.webp" alt="Мастер и Маргарита">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Мастер и Маргарита</h3>
+                        <p class="book-author">Михаил Булгаков</p>
+                        <div class="book-meta">
+                            <span class="genre">Роман</span>
+                            <span class="year">1967</span>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-outline">Подробнее</a>
+                            <button class="btn btn-primary add-to-cart" 
+                                    data-id="1" 
+                                    data-title="Мастер и Маргарита" 
+                                    data-price="450"
+                                    data-image="images/master-margarita.webp">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="images/crime-punishmen.jpg" alt="Преступление и наказание">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Преступление и наказание</h3>
+                        <p class="book-author">Федор Достоевский</p>
+                        <div class="book-meta">
+                            <span class="genre">Роман</span>
+                            <span class="year">1866</span>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-outline">Подробнее</a>
+                            <button class="btn btn-primary add-to-cart" 
+                                    data-id="2" 
+                                    data-title="Преступление и наказание" 
+                                    data-price="380"
+                                    data-image="images/crime-punishmen.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="images/war-peace.webp" alt="Война и мир">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Война и мир</h3>
+                        <p class="book-author">Лев Толстой</p>
+                        <div class="book-meta">
+                            <span class="genre">Роман-эпопея</span>
+                            <span class="year">1869</span>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-outline">Подробнее</a>
+                            <button class="btn btn-primary add-to-cart" 
+                                    data-id="3" 
+                                    data-title="Война и мир" 
+                                    data-price="620"
+                                    data-image="images/war-peace.webp">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="images/onegin.jpg" alt="Евгений Онегин">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Евгений Онегин</h3>
+                        <p class="book-author">Александр Пушкин</p>
+                        <div class="book-meta">
+                            <span class="genre">Роман в стихах</span>
+                            <span class="year">1833</span>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-outline">Подробнее</a>
+                            <button class="btn btn-primary add-to-cart" 
+                                    data-id="4" 
+                                    data-title="Евгений Онегин" 
+                                    data-price="290"
+                                    data-image="images/onegin.jpg">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <h2>Возможности библиотеки</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-moon"></i>
+                    <h3>Ночной режим</h3>
+                    <p>Читайте с комфортом в любое время суток</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Корзина</h3>
+                    <p>Сохраняйте понравившиеся книги</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Закладки</h3>
+                    <p>Продолжайте чтение с того же места</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-book"></i> ОнлайнБиблиотека</h3>
+                    <p>Доступ к литературе в любое время</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-envelope"></i> info@library.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ОнлайнБиблиотека. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
